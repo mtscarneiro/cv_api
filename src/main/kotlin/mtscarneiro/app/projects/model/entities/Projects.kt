@@ -1,5 +1,6 @@
 package mtscarneiro.app.projects.model.entities
 
+import lombok.Getter
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -11,6 +12,7 @@ data class Projects(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id: Int,
+
     internal val url: String,
     internal val imageLink: String,
     val title: String,
@@ -18,6 +20,10 @@ data class Projects(
 ) {
     override fun toString(): String {
         return "Projects(id=$id, url='$url', imageLink='$imageLink', title='$title', description='$description')"
+    }
+
+    fun getId(): Int {
+        return id;
     }
 
 }
